@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>SAT</title>
+    <link rel="stylesheet" type="text/css" href="ext-4.2.1/resources/ext-theme-gray/ext-theme-gray-all-debug.css">
+    <!--// Ext JS 테마스타일 파일 // -->
+    <script type="text/javascript" src="/ext-4.2.1/ext-all-debug.js"></script>
+    <!--// Ext JS 코어 라이브러리 // -->
+</head>
+
+<body>
+    <script type="text/javascript">
+        Ext.onReady(function () {
+            Ext.create('Ext.panel.Panel', {
+                renderTo: document.body,
+                width: '100%',
+                title: 'Hello',
+                height: 150,
+                bodyPadding: 5,
+                items: [
+                    {
+                        xtype: 'form',
+                        items: [
+                            {
+                                xtype: 'textfield',
+                                fieldLabel: '이름'
+                            }
+                        ],
+                        buttons: [
+                            {
+                                text: 'SAVE'
+                            }
+                        ]
+                    }
+                ]
+            });
+        })
+    </script>
+</body>
+
+</html>
