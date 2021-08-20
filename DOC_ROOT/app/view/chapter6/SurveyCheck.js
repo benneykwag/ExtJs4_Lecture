@@ -1,7 +1,7 @@
-Ext.define('ext5.view.chapter6.SurveyCheck', {
+Ext.define('myapp.view.chapter6.SurveyCheck', {
     extend: 'Ext.container.Container',
     xtype: 'chapter6-surveycheck',
-    requires: ['ext5.view.chapter6.DataSet', 'ext5.model.smpl.Data'],		// #1
+    requires: ['myapp.view.chapter6.DataSet', 'myapp.model.smpl.Data'],		// #1
     layout: {
         type: 'vbox',						// #2
         align: 'stretch'						// #3
@@ -20,14 +20,14 @@ Ext.define('ext5.view.chapter6.SurveyCheck', {
         this.callParent();						// #7
         this.on('render', function () {					// #8
             var store = new Ext.data.Store({
-                model: ext5.model.smpl.Data,
+                model: myapp.model.smpl.Data,
                 proxy: {
                     type: 'memory',
                     reader: {
                         type: 'array'
                     }
                 },
-                data: eval('ext5.view.chapter6.DataSet.' + me.code)
+                data: eval('myapp.view.chapter6.DataSet.' + me.code)
             });
 
             var checkboxGroup = {

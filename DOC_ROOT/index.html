@@ -32,7 +32,19 @@
                             }
                         ]
                     }
-                ]
+                ],
+                listeners: {
+                    render: function () {
+                        console.log('render')
+                    },
+                    beforerender: function(){
+                        debugger
+                        console.log('beforerender')
+                    },
+                    afterrender: function(){
+                        console.log('afterrender')
+                    }
+                }
             });
         })
     </script>

@@ -2,10 +2,6 @@ Ext.define('myapp.view.chapter4.CustomCardTabPanel', {
     extend: 'Ext.container.Container',
     cls : 'custom-tab',
     requires: [
-        'Ext.layout.container.Border',
-        'Ext.layout.container.Card',
-        'Ext.button.Button',
-        'Ext.grid.Panel',
         'myapp.view.chapter4.CustomTab'
     ],
     layout: 'border',

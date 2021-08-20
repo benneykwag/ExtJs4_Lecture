@@ -2,23 +2,20 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Table Layout</title>
-    <link rel="stylesheet" type="text/css"
-          href="/ext/packages/ext-theme-gray/build/resources/ext-theme-gray-all-debug.css">
-    <script type="text/javascript" src="/ext/build/ext-all-debug.js"></script>
-
+    <title>Store</title>
+    <link rel="stylesheet" type="text/css" href="/ext-4.2.1/resources/ext-theme-gray/ext-theme-gray-all-debug.css">
+    <script type="text/javascript" src="/ext-4.2.1/ext-all-debug.js"></script>
 </head>
 <body>
 <script type="text/javascript">
     Ext.Loader.setConfig({
         enabled: true,
         paths: {
-            'ext5': '/app'
+            'myapp': '/app'
         }
     });
     Ext.require([
-        'Ext.Component',
-        'ext5.model.ticket.User'
+        'myapp.model.Board'
     ]);
 
 Ext.onReady(function () {
@@ -26,13 +23,13 @@ Ext.onReady(function () {
      Step1 스토어 생성
      */
     var store = Ext.create('Ext.data.Store', {  // #1
-        model: 'ext5.model.ticket.User',   // #2
+        model: 'myapp.model.Board',   // #2
         proxy: {    // #3
             type: 'ajax',
-            url: '../../resources/data/ticket-user.json',
+            url: '/resources/data/boards.json',
             reader: {
                 type: 'json',
-                rootProperty: 'entitys'
+                root: 'data'
             }
         },
         autoLoad: true  // #4

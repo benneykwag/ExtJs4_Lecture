@@ -1,9 +1,9 @@
-Ext.define('ext5.view.chapter6.SurveyForm', {
+Ext.define('myapp.view.chapter6.SurveyForm', {
     extend: 'Ext.form.FieldSet',
     xtype: 'chapter6-surveyform',
     requires: [
-        'ext5.view.chapter6.SurveyRadio',
-        'ext5.view.chapter6.SurveyCheck'
+        'myapp.view.chapter6.SurveyRadio',
+        'myapp.view.chapter6.SurveyCheck'
     ],
     title: '설문조사',
     layout: 'anchor',

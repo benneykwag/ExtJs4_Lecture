@@ -1,9 +1,9 @@
-Ext.define('ext5.view.chapter6.PaymentOfCardInfo', {
+Ext.define('myapp.view.chapter6.PaymentOfCardInfo', {
     extend: 'Ext.form.FieldSet',
     xtype: 'chapter6-paymentcard',
     requires: [
-        'ext5.view.chapter6.DataSet',
-        'ext5.model.smpl.Data'
+        'myapp.view.chapter6.DataSet',
+        'myapp.model.smpl.Data'
     ],
     title: '결제정보',
     initComponent: function () {
@@ -33,14 +33,14 @@ Ext.define('ext5.view.chapter6.PaymentOfCardInfo', {
                         },
                         margin: '0 0 10 0',
                         store: new Ext.data.Store({				// #3
-                            model: ext5.model.smpl.Data,			// #4
+                            model: myapp.model.smpl.Data,			// #4
                             proxy: {
                                 type: 'memory',				// #5
                                 reader: {
                                     type: 'array'				// #6
                                 }
                             },
-                            data: ext5.view.chapter6.DataSet.cardList			// #7
+                            data: myapp.view.chapter6.DataSet.cardList			// #7
                         })
                     },
                     {
@@ -84,7 +84,7 @@ Ext.define('ext5.view.chapter6.PaymentOfCardInfo', {
                                     fields: ['name', 'num'],            // #2
                                     data: (function () {                // #3
                                         var data = [],                  // #4
-                                            months = ext5.view.chapter6.DataSet.monthNames;     // #5
+                                            months = myapp.view.chapter6.DataSet.monthNames;     // #5
                                         Ext.Array.forEach(months, function (name, i) {  // #6
                                             data[i] = {name: name, num: i + 1};         // #7
                                         });

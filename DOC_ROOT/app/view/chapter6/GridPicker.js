@@ -1,4 +1,4 @@
-Ext.define('ext5.view.chapter6.GridPicker', {
+Ext.define('myapp.view.chapter6.GridPicker', {
     extend: 'Ext.grid.Panel',
     xtype: 'chapter6-gridpicker',
     floating: true,

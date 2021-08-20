@@ -1,4 +1,4 @@
-Ext.define('ext5.view.chapter6.DeliveryForm', {
+Ext.define('myapp.view.chapter6.DeliveryForm', {
     extend: 'Ext.form.FieldSet',
     xtype: 'chapter6-deliveryform',
     title: '배송지 정보',
@@ -249,7 +249,7 @@ Ext.define('ext5.view.chapter6.DeliveryForm', {
                 // Case 2
                 this.ownerCt.getForm().setValues(response.data);
                 // Case 3
-                var model = Ext.create('ext5.model.CheckOut');		// #1
+                var model = Ext.create('myapp.model.CheckOut');		// #1
                 Ext.apply(model.data, response.data);			// #2
                 this.ownerCt.getForm().loadRecord(model);			// #3
             },

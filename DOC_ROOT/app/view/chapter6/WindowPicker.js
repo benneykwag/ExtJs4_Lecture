@@ -1,7 +1,7 @@
-Ext.define('ext5.view.chapter6.WindowPicker', {
+Ext.define('myapp.view.chapter6.WindowPicker', {
     extend: 'Ext.window.Window',
     xtype: 'chapter6-windowpicker',
-    requires: ['ext5.view.chapter6.GridPicker'],
+    requires: ['myapp.view.chapter6.GridPicker'],
     closeAction: 'hide',
     height: 200,
     width: 400,

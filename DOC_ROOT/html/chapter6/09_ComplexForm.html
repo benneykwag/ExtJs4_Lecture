@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Table Layout</title>
-    <link rel="stylesheet" type="text/css"
-          href="/ext/packages/ext-theme-gray/build/resources/ext-theme-gray-all-debug.css">
-    <script type="text/javascript" src="/ext/ext-all-debug.js"></script>
+    <link rel="stylesheet" type="text/css" href="/ext-4.2.1/resources/ext-theme-gray/ext-theme-gray-all-debug.css">
+    <script type="text/javascript" src="/ext-4.2.1/ext-all-debug.js"></script>
     <style type="text/css">
         .combo {
             font-weight: bold;
@@ -32,15 +31,15 @@
     Ext.Loader.setConfig({
         enabled: true,
         paths: {
-            'ext5': '/app'
+            'myapp': '/app'
         }
     });
     Ext.require([
-        'ext5.view.chapter6.CheckOutMaster'
+        'myapp.view.chapter6.CheckOutMaster'
     ]);
 
     Ext.onReady(function () {
-        var fp = Ext.create('ext5.view.chapter6.CheckOutMaster', {
+        var fp = Ext.create('myapp.view.chapter6.CheckOutMaster', {
             renderTo: document.body
         });
     });

@@ -1,4 +1,4 @@
-Ext.define('ext5.view.chapter6.DeliveryPersonInfo', {
+Ext.define('myapp.view.chapter6.DeliveryPersonInfo', {
     extend: 'Ext.form.FieldSet',
     xtype: 'chapter6-deliveryperson',
     title: '수취인 정보',

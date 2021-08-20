@@ -3,26 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Table Layout</title>
-    <link rel="stylesheet" type="text/css"
-          href="/ext/packages/ext-theme-gray/build/resources/ext-theme-gray-all-debug.css">
-    <script type="text/javascript" src="/ext/ext-all-debug.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="/ext-4.2.1/resources/ext-theme-gray/ext-theme-gray-all-debug.css">
+    <script type="text/javascript" src="/ext-4.2.1/ext-all-debug.js"></script>
 </head>
 <body>
 <script type="text/javascript">
     Ext.Loader.setConfig({
         enabled: true,
         paths: {
-            'ext5': '/app'
+            'myapp': '/app'
         }
     });
     Ext.require([
-        'ext5.model.Board'
+        'myapp.model.Board'
     ]);
 
     Ext.onReady(function () {
         // 모델을 생성하고 필드를 채운다.
-        var board = Ext.create('ext5.model.Board', {
+        var board = Ext.create('myapp.model.Board', {
             id: 1,
             title: '안녕하세요^^',
             userName: '홍길동2',
@@ -31,11 +29,7 @@
             readCnt: 300,
             deleteYn: false
         });
-        // 생성된 모델을 검증한다.
-        var errors = board.getValidation();
-        console.log('오류발견여부  :', errors.dirty);
-        console.log("오류필드 content:", errors.get('content'));
-        console.log("오류필드 role:", errors.get('role'));
+       console.log(board.getData())
     });
 </script>
 </body>

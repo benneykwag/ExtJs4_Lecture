@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Store</title>
+    <link rel="stylesheet" type="text/css" href="/ext-4.2.1/resources/ext-theme-gray/ext-theme-gray-all-debug.css">
+    <script type="text/javascript" src="/ext-4.2.1/ext-all-debug.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        Ext.Loader.setConfig({
+            enabled: true,
+            paths: {
+                'myapp': '/app'
+            }
+        });
+        Ext.require([
+            'myapp.model.Board'
+        ]);
+
+        Ext.onReady(function () {
+            /***
+             * Step1 모델객체를 통해 스토어 입력
+             * @type {*}
+             */
+            var store = Ext.create('Ext.data.Store', {
+                model: 'myapp.model.Board'
+            });
+            var user = Ext.create('myapp.model.Board', {
+                title: '임진왜란',
+                userName: "이순신",
+            });
+            store.add(user);
+            store.insert(0, {
+                title: '홍길동전',
+                userName: "홍길동",
+            });
+
+            var arrayModel = [];        // #2
+            for (var i = 0; i < 5; i++) {    // #3
+                arrayModel.push({ // #4
+                    title: '홍길동전'+i,
+                    userName: "홍길동" + i,
+                });
+            }
+            store.add(arrayModel);  // #6
+
+            // 신규 입력된 건을 찾는다.
+            var newRecords = store.getNewRecords();
+            Ext.each(newRecords, function (record, index) {
+                console.log('입력한 데이터 (', index, ')', record.getData());
+            });
+
+            Ext.create('Ext.grid.Panel', {
+                title: 'Simpsons',
+                store: store,
+                // id: 'myGrid',
+                itemId: 'myGrid',
+                // store: Ext.create('Ext.data.Store',{
+                //     model: 'myapp.model.Board',
+                //     data: [{},{}]
+                // }),
+                columns: [
+                    { text: '제목', dataIndex: 'title' },
+                    { text: '글쓴이', dataIndex: 'userName', flex: 1 }
+                ],
+                height: 200,
+                width: 400,
+                listeners: {
+                    select: function(cmp, record){
+                        console.log(record.data)
+                    }
+                },
+                renderTo: Ext.getBody()
+            })
+
+        })
+
+    </script>
+</body>
+
+</html>

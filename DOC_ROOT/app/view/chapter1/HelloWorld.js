@@ -27,17 +27,9 @@ Ext.define('myapp.view.chapter1.HelloWorld', {
         console.log('save')
         return 'aa'
     },
-    // buttons: [
-    //     {
-    //         xtype: 'button',
-    //         text: 'Save',
-    //         listeners: {
-    //             click: {
-    //                 fn: function(){
-    //                     console.log(this.up('panel').save())
-    //                 }
-    //             }
-    //         }
-    //     }
-    // ]
+    listeners: {
+        render: function(){
+            console.log('render')
+        }
+    }
 });

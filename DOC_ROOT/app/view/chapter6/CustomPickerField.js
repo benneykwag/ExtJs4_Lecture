@@ -1,9 +1,9 @@
-Ext.define('ext5.view.chapter6.CustomPickerField', {
+Ext.define('myapp.view.chapter6.CustomPickerField', {
     extend: 'Ext.form.field.Picker',   // #1
     xtype: 'chapter6-custompicker',      // #2
     requires: [
-        'ext5.view.chapter6.GridPicker',
-        'ext5.view.chapter6.WindowPicker'
+        'myapp.view.chapter6.GridPicker',
+        'myapp.view.chapter6.WindowPicker'
     ],
     triggerCls: 'x-form-search-trigger',       // #3
     createPicker: function (C) {        // #4
