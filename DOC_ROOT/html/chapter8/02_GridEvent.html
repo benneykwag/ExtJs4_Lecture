@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Store</title>
+    <link rel="stylesheet" type="text/css" href="/ext-4.2.1/resources/ext-theme-gray/ext-theme-gray-all-debug.css">
+    <script type="text/javascript" src="/ext-4.2.1/ext-all-debug.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        Ext.Loader.setConfig({
+            enabled: true,
+            paths: {
+                'myapp': '/app'
+            }
+        });
+        Ext.require([
+            'myapp.model.Board'
+        ]);
+        Ext.onReady(function () {
+            var button = Ext.create('Ext.grid.Panel', {
+                title: 'Simpsons',
+                store: Ext.create('Ext.data.Store',{
+                    model: 'myapp.model.Board',
+                    data: [{
+                        title: '안녕하세요.'
+                    },{
+                        title : '환영합니다.'
+                    }]
+                }),
+                columns: [
+                    { text: '제목', dataIndex: 'title' },
+                ],
+                height: 200,
+                width: 400,
+                listeners: {
+                    select: function (cmp, record) {
+                        console.log(record.data)
+                    }
+                },
+                renderTo: Ext.getBody()
+            })
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Store</title>
+    <link rel="stylesheet" type="text/css" href="/ext-4.2.1/resources/ext-theme-gray/ext-theme-gray-all-debug.css">
+    <script type="text/javascript" src="/ext-4.2.1/ext-all-debug.js"></script>
+</head>
+
+<body>
+<script type="text/javascript">
+    Ext.onReady(function () {
+        var button = Ext.create('Ext.button.Button',{
+            text: '클릭하세요',
+            renderTo : document.body,
+            listeners: {
+                click : function(){
+                    console.log('button clicke event listen')
+                }
+            }
+        })
+    })
+
+</script>
+</body>
+</html>
